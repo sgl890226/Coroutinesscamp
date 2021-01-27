@@ -20,6 +20,6 @@ class RengViewModel : ViewModel() {
       .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
       .build()
     val api = retrofit.create(Api::class.java)
-    return api.listReposKt("rengwuxian")
+    return api.listReposKt("sgl890226")
   }
 }

@@ -39,7 +39,7 @@ class Main1Activity : AppCompatActivity() {
         val api = retrofit.create(Api::class.java)
 //        GlobalScope.launch(Dispatchers.Main) {
 //            try {
-//                val repos = api.listReposKt("rengwuxian") // 后台
+//                val repos = api.listReposKt("sgl890226") // 后台
 //                tvTextview1.text = repos[0].name // 前台
 //            } catch (e: Exception) {
 //                tvTextview1.text = e.message // 前台
@@ -54,7 +54,7 @@ class Main1Activity : AppCompatActivity() {
             .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .build()
         val api1 = retrofitRxJava.create(Api::class.java)
-//        api1.listReposRx("rengwuxian")
+//        api1.listReposRx("sgl890226")
 //            .observeOn(AndroidSchedulers.mainThread())
 //            .subscribe(object : SingleObserver<List<Repo>> {
 //                override fun onSuccess(repos: List<Repo>) {
@@ -72,14 +72,14 @@ class Main1Activity : AppCompatActivity() {
         /**
          * 普通 的写法
          */
-        /*api.listRepos("rengwuxian")
+        /*api.listRepos("sgl890226")
       .enqueue(object : Callback<List<Repo>?> {
         override fun onResponse(call: Call<List<Repo>?>, response: Response<List<Repo>?>) {
-          val nameRengwuxian = response.body()?.get(0)?.name
+          val namesgl890226 = response.body()?.get(0)?.name
           api.listRepos("google")
             .enqueue(object : Callback<List<Repo>?> {
               override fun onResponse(call: Call<List<Repo>?>, response: Response<List<Repo>?>) {
-                tvTextview2.text = "${nameRengwuxian}-${response.body()?.get(0)?.name}"
+                tvTextview2.text = "${namesgl890226}-${response.body()?.get(0)?.name}"
               }
 
               override fun onFailure(call: Call<List<Repo>?>, t: Throwable) {
@@ -96,7 +96,7 @@ class Main1Activity : AppCompatActivity() {
          */
 
 //        Single.zip(
-//            api1.listReposRx("rengwuxian"),
+//            api1.listReposRx("sgl890226"),
 //            api1.listReposRx("google"),
 //            BiFunction { list1, list2 -> "${list1[0].name} - ${list2[0].name}" }
 //        ).observeOn(AndroidSchedulers.mainThread())
